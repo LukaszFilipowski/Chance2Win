@@ -11,12 +11,24 @@ import com.example.ukasz.chance2win.App;
 
 public class CardListActivity extends AppCompatActivity {
 
+    private String[] getStringFromResource(Integer[] stringIds) {
+        String[] cardNames = new String[stringIds.length];
+        for(int i=0; i<stringIds.length; i++) {
+            cardNames[i] = getResources().getString(stringIds[i]);
+        }
+
+        return cardNames;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_list);
 
-        ArrayAdapter<String> cardsAdapter = new ArrayAdapter<String>(this, R.layout.item, R.id.itemName, (ArrayList)App.deck.deckList);
+        String[] cardNames = getStringFromResource(App.deck.getCardNamesId());
+        Integer[] cardImagesId = App.deck.getCardImagesId();
+
+        CardListAdapter cardsAdapter = new CardListAdapter(CardListActivity.this, cardNames, cardImagesId);
 
         ListView cardsList = new ListView(this);
         setContentView(cardsList);

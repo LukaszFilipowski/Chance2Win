@@ -1,5 +1,7 @@
 package com.example.ukasz.chance2win;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +78,26 @@ public class Deck {
             deckList.add(cards[i]);
             cards[i] = null;
         }
+    }
+
+    public Integer[] getCardNamesId() {
+        Integer[] cardNames = new Integer[deckList.size()];
+        for(int i = 0; i < deckList.size(); i++) {
+            Cards card = deckList.get(i);
+            cardNames[i] = card.getName();
+        }
+
+        return cardNames;
+    }
+
+    public Integer[] getCardImagesId() {
+        Integer[] cardImages = new Integer[deckList.size()];
+        for(int i = 0; i < deckList.size(); i++) {
+            Cards card = deckList.get(i);
+            cardImages[i] = card.getDrawable();
+        }
+
+        return cardImages;
     }
 
     public enum Cards {
