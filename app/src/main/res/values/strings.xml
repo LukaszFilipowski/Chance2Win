@@ -1,3 +1,62 @@
 <resources>
     <string name="app_name">Chance2Win</string>
+    <string name="tableCardLabel">Karty na stole</string>
+    <string name="handCardLabel">Karty w ręce</string>
+
+
+    <string name="aceOfHearts">As Kier</string>
+    <string name="kingOfHearts">Król Kier</string>
+    <string name="queenOfHearts">Królowa Kier</string>
+    <string name="jackOfHearts">Walet Kier</string>
+    <string name="c10OfHearts">10 Kier</string>
+    <string name="c9OfHearts">9 Kier</string>
+    <string name="c8OfHearts">8 Kier</string>
+    <string name="c7OfHearts">7 Kier</string>
+    <string name="c6OfHearts">6 Kier</string>
+    <string name="c5OfHearts">5 Kier</string>
+    <string name="c4OfHearts">4 Kier</string>
+    <string name="c3OfHearts">3 Kier</string>
+    <string name="c2OfHearts">2 Kier</string>
+
+    <string name="aceOfSpades">As Pik</string>
+    <string name="kingOfSpades">Król Pik</string>
+    <string name="queenOfSpades">Królowa Pik</string>
+    <string name="jackOfSpades">Walet Pik</string>
+    <string name="c10OfSpades">10 Pik</string>
+    <string name="c9OfSpades">9 Pik</string>
+    <string name="c8OfSpades">8 Pik</string>
+    <string name="c7OfSpades">7 Pik</string>
+    <string name="c6OfSpades">6 Pik</string>
+    <string name="c5OfSpades">5 Pik</string>
+    <string name="c4OfSpades">4 Pik</string>
+    <string name="c3OfSpades">3 Pik</string>
+    <string name="c2OfSpades">2 Pik</string>
+
+    <string name="aceOfDiamonds">As Karo</string>
+    <string name="kingOfDiamonds">Król Karo</string>
+    <string name="queenOfDiamonds">Królowa Karo</string>
+    <string name="jackOfDiamonds">Walet Karo</string>
+    <string name="c10OfDiamonds">10 Karo</string>
+    <string name="c9OfDiamonds">9 Karo</string>
+    <string name="c8OfDiamonds">8 Karo</string>
+    <string name="c7OfDiamonds">7 Karo</string>
+    <string name="c6OfDiamonds">6 Karo</string>
+    <string name="c5OfDiamonds">5 Karo</string>
+    <string name="c4OfDiamonds">4 Karo</string>
+    <string name="c3OfDiamonds">3 Karo</string>
+    <string name="c2OfDiamonds">2 Karo</string>
+
+    <string name="aceOfClubs">As Trefl</string>
+    <string name="kingOfClubs">Król Trefl</string>
+    <string name="queenOfClubs">Królowa Trefl</string>
+    <string name="jackOfClubs">Walet Trefl</string>
+    <string name="c10OfClubs">10 Trefl</string>
+    <string name="c9OfClubs">9 Trefl</string>
+    <string name="c8OfClubs">8 Trefl</string>
+    <string name="c7OfClubs">7 Trefl</string>
+    <string name="c6OfClubs">6 Trefl</string>
+    <string name="c5OfClubs">5 Trefl</string>
+    <string name="c4OfClubs">4 Trefl</string>
+    <string name="c3OfClubs">3 Trefl</string>
+    <string name="c2OfClubs">2 Trefl</string>
 </resources>
