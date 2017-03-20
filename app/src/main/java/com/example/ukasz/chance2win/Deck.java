@@ -1,12 +1,82 @@
 package com.example.ukasz.chance2win;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Łukasz on 19.03.2017.
  */
 
 public class Deck {
 
+    private Cards cards[] = new Cards[] {
+            Cards.ACE_HEARTS,
+            Cards.KING_HEARTS,
+            Cards.QUEEN_HEARTS,
+            Cards.JACK_HEARTS,
+            Cards.C10_HEARTS,
+            Cards.C9_HEARTS,
+            Cards.C8_HEARTS,
+            Cards.C7_HEARTS,
+            Cards.C6_HEARTS,
+            Cards.C5_HEARTS,
+            Cards.C4_HEARTS,
+            Cards.C3_HEARTS,
+            Cards.C2_HEARTS,
 
+            Cards.ACE_CLUBS,
+            Cards.KING_CLUBS,
+            Cards.QUEEN_CLUBS,
+            Cards.JACK_CLUBS,
+            Cards.C10_CLUBS,
+            Cards.C9_CLUBS,
+            Cards.C8_CLUBS,
+            Cards.C7_CLUBS,
+            Cards.C6_CLUBS,
+            Cards.C5_CLUBS,
+            Cards.C4_CLUBS,
+            Cards.C3_CLUBS,
+            Cards.C2_CLUBS,
+
+            Cards.ACE_DIAMONDS,
+            Cards.KING_DIAMONDS,
+            Cards.QUEEN_DIAMONDS,
+            Cards.JACK_DIAMONDS,
+            Cards.C10_DIAMONDS,
+            Cards.C9_DIAMONDS,
+            Cards.C8_DIAMONDS,
+            Cards.C7_DIAMONDS,
+            Cards.C6_DIAMONDS,
+            Cards.C5_DIAMONDS,
+            Cards.C4_DIAMONDS,
+            Cards.C3_DIAMONDS,
+            Cards.C2_DIAMONDS,
+
+            Cards.ACE_SPADES,
+            Cards.KING_SPADES,
+            Cards.QUEEN_SPADES,
+            Cards.JACK_SPADES,
+            Cards.C10_SPADES,
+            Cards.C9_SPADES,
+            Cards.C8_SPADES,
+            Cards.C7_SPADES,
+            Cards.C6_SPADES,
+            Cards.C5_SPADES,
+            Cards.C4_SPADES,
+            Cards.C3_SPADES,
+            Cards.C2_SPADES,
+
+    };
+
+    public List<Cards> deckList;
+
+    Deck() {
+        deckList = new ArrayList<Cards>();
+        for(int i = 0; i < cards.length; i++) {
+            deckList.add(cards[i]);
+            cards[i] = null;
+        }
+    }
 
     public enum Cards {
         ACE_HEARTS(Color.HEARTS, Rank.ACE, R.drawable.ace_of_hearts, R.string.aceOfHearts),
