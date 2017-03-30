@@ -76,7 +76,6 @@ public class Deck {
         deckList = new ArrayList<Cards>();
         for(int i = 0; i < cards.length; i++) {
             deckList.add(cards[i]);
-            cards[i] = null;
         }
     }
 
@@ -92,6 +91,16 @@ public class Deck {
 
     public void addToDeck(Cards card) {
         deckList.add(card);
+    }
+
+    public Cards getCardByDrawable(int resourceId) {
+        for(int i = 0; i < cards.length; i++) {
+            Cards currentItem = cards[i];
+            if(currentItem.getDrawable() == resourceId) {
+                return currentItem;
+            }
+        }
+        return null;
     }
 
     public Integer[] getCardNamesId() {

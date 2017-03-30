@@ -10,7 +10,7 @@ import android.widget.ImageButton;
  */
 
 public final class App extends Application {
-    public static final String PREFS_NAME = "dataFile";
+    public static final String PREFS_NAME = "chance2windatatestfile";
     public final static Deck deck = new Deck();
     public static Integer currentClicked = null;
     public static int currentResourceId;

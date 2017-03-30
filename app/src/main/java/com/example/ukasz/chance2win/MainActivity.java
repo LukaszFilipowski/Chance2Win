@@ -23,11 +23,30 @@ public class MainActivity extends AppCompatActivity {
 
             SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
             int selectedCount = settings.getInt("selectedCount", 0);
-            selectedCount++;
+            boolean findedIndex = false;
+            for(int i = 1; i <= selectedCount; i++) {
+                if(App.currentClicked == settings.getInt("Btn"+i, 0)) {
+                    findedIndex = true;
+                    selectedCount = i;
+                    break;
+                }
+            }
+
             SharedPreferences.Editor editor = settings.edit();
-            editor.putInt("Res"+selectedCount, App.currentResourceId);
-            editor.putInt("selectedCount", selectedCount);
-            editor.putInt("Btn"+selectedCount, App.currentClicked);
+
+            if(findedIndex) {
+
+                int previousResourceId = settings.getInt("Res"+selectedCount, 0);
+                App.deck.addToDeck(App.deck.getCardByDrawable(previousResourceId));
+
+            } else {
+                selectedCount++;
+                editor.putInt("selectedCount", selectedCount);
+
+            }
+
+            editor.putInt("Res" + selectedCount, App.currentResourceId);
+            editor.putInt("Btn" + selectedCount, App.currentClicked);
             editor.commit();
 
             App.currentClicked = null;
