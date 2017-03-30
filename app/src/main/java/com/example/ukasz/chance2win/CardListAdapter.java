@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by Łukasz on 20.03.2017.
  */
@@ -33,7 +35,7 @@ public class CardListAdapter extends ArrayAdapter<String> {
         cardName.setText(cardNames[position]);
 
         ImageView cardImage = (ImageView) rowView.findViewById(R.id.itemImage);
-        cardImage.setImageResource(cardImagesId[position]);
+        Picasso.with(context).load(cardImagesId[position]).resize(100, 120).into(cardImage);
 
         return rowView;
     }

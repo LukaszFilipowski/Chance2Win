@@ -7,7 +7,7 @@
     tools:context="com.example.ukasz.chance2win.MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/cardOnTable2"
         android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,55 +17,59 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/cardOnTable1"
+        android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignTop="@+id/cardOnTable2"
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
-        android:layout_toLeftOf="@+id/imageButton"
-        android:layout_toStartOf="@+id/imageButton"
+        android:layout_toLeftOf="@+id/cardOnTable2"
+        android:layout_toStartOf="@+id/cardOnTable2"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/cardOnTable3"
+        android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignTop="@+id/cardOnTable2"
         android:layout_marginLeft="19dp"
         android:layout_marginStart="19dp"
-        android:layout_toEndOf="@+id/imageButton"
-        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/cardOnTable2"
+        android:layout_toRightOf="@+id/cardOnTable2"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/cardOnTable4"
+        android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2"
+        android:layout_below="@+id/cardOnTable2"
+        android:layout_alignLeft="@+id/cardOnTable1"
+        android:layout_alignStart="@+id/cardOnTable1"
         android:layout_marginLeft="39dp"
         android:layout_marginStart="39dp" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/cardOnTable5"
+        android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButton4"
+        android:layout_alignTop="@+id/cardOnTable4"
         android:layout_marginLeft="25dp"
         android:layout_marginStart="25dp"
-        android:layout_toEndOf="@+id/imageButton4"
-        android:layout_toRightOf="@+id/imageButton4"
+        android:layout_toEndOf="@+id/cardOnTable4"
+        android:layout_toRightOf="@+id/cardOnTable4"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tableCardLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButton3"
+        android:layout_above="@+id/cardOnTable3"
         android:layout_centerHorizontal="true"
         android:text="@string/tableCardLabel" />
 
@@ -73,26 +77,28 @@
         android:id="@+id/handCardLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButton4"
+        android:layout_below="@+id/cardOnTable4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:text="@string/handCardLabel" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/cardOnHand1"
+        android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignLeft="@+id/cardOnTable4"
+        android:layout_alignStart="@+id/cardOnTable4"
         android:layout_below="@+id/handCardLabel"
-        android:layout_alignLeft="@+id/imageButton4"
-        android:layout_alignStart="@+id/imageButton4" />
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/cardOnHand2"
+        android:onClick="selectCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignLeft="@+id/cardOnTable5"
+        android:layout_alignStart="@+id/cardOnTable5"
         android:layout_below="@+id/handCardLabel"
-        android:layout_alignLeft="@+id/imageButton5"
-        android:layout_alignStart="@+id/imageButton5" />
+        app:srcCompat="@mipmap/ic_launcher" />
 </RelativeLayout>

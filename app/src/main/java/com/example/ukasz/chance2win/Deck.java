@@ -80,6 +80,20 @@ public class Deck {
         }
     }
 
+    public void deleteFromDeck(int resourceId) {
+        for(int i = 0; i < deckList.size(); i++) {
+            Cards currentItem = deckList.get(i);
+            if(currentItem.getDrawable() == resourceId) {
+                deckList.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void addToDeck(Cards card) {
+        deckList.add(card);
+    }
+
     public Integer[] getCardNamesId() {
         Integer[] cardNames = new Integer[deckList.size()];
         for(int i = 0; i < deckList.size(); i++) {

@@ -7,9 +7,12 @@
     tools:context="com.example.ukasz.chance2win.CardListActivity">
 
     <ListView
+        android:animationCache="false"
+        android:scrollingCache="false"
+        android:id="@+id/cardList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
