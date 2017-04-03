@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.squareup.picasso.Picasso;
@@ -73,4 +74,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void reset(View view) {
+        SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.clear();
+        editor.commit();
+
+        App.deck = new Deck();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

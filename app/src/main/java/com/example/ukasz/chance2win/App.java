@@ -10,8 +10,8 @@ import android.widget.ImageButton;
  */
 
 public final class App extends Application {
-    public static final String PREFS_NAME = "chance2windatatestfile";
-    public final static Deck deck = new Deck();
+    public static final String PREFS_NAME = "c2wData";
+    public static Deck deck = new Deck();
     public static Integer currentClicked = null;
     public static int currentResourceId;
 
@@ -23,7 +23,7 @@ public final class App extends Application {
         mContext = this;
     }
 
-    public static Context getContext(){
+    public static Context getContext() {
         return mContext;
     }
 

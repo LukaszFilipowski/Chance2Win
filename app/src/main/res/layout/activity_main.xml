@@ -101,4 +101,15 @@
         android:layout_alignStart="@+id/cardOnTable5"
         android:layout_below="@+id/handCardLabel"
         app:srcCompat="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardOnHand2"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/cardOnHand2"
+        android:layout_toRightOf="@+id/cardOnHand2"
+        android:onClick="reset"
+        android:text="@string/resetBtn" />
 </RelativeLayout>
