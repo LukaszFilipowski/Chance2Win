@@ -13,7 +13,7 @@ public class Poker {
 
     private static Deck.Cards[] cards;
     private static int handType;
-    private static Deck.Cards.Rank card, card2;
+    private static Deck.Cards.Rank card = null, card2 = null;
 
 
     Poker(int[] cards) {
@@ -98,6 +98,7 @@ public class Poker {
         if(clubs >= 5 || spades >= 5 || diamonds >= 5 || hearts >= 5) {
 
             Deck.Cards.Rank status = findStraight();
+            card = status;
             if(findStraight() != null) {
                 return 8;
             } else {
@@ -135,10 +136,12 @@ public class Poker {
         } else {
             if(max == 3) {
 
+                // full house
                 for(int i=0; i < cards.length; i++) {
                     for(int l=0; l < cards.length; l++) {
-                        if(cards[i].getRank() == cards[l].getRank() && currentRank != cards[i].getRank()) {
+                        if(cards[i].getRank() == cards[l].getRank() && currentRank != cards[i].getRank() && i != l) {
                             card = currentRank;
+                            card2 = cards[i].getRank();
                             return 6;
                         }
                     }
@@ -170,8 +173,8 @@ public class Poker {
                     card = currentRank;
                     for(int i=0; i < cards.length; i++) {
                         for(int l=0; l < cards.length; l++) {
-                            if(cards[i].getRank() == cards[l].getRank() && currentRank != cards[i].getRank()) {
-                                card2 = currentRank;
+                            if(cards[i].getRank() == cards[l].getRank() && currentRank != cards[i].getRank() && i != l) {
+                                card2 = cards[i].getRank();
                                 return 2;
                             }
                         }
@@ -206,9 +209,80 @@ public class Poker {
         return howMatch;
     }
 
-    public int getHandType() {
-        return handType;
+    private String getCard(Deck.Cards.Rank rank) {
+        switch (rank) {
+            case ACE:
+                return App.getContext().getResources().getString(R.string.ace);
 
+            case KING:
+                return App.getContext().getResources().getString(R.string.king);
+
+            case QUEEN:
+                return App.getContext().getResources().getString(R.string.queen);
+
+            case JACK:
+                return App.getContext().getResources().getString(R.string.jack);
+
+            default:
+                 int card = rank.getValue()+1;
+                 return Integer.toString(card);
+        }
+    }
+
+    public String getHandType() {
+        String text = "";
+        switch(handType) {
+
+            case 8:
+                if(card.getValue() == 13) {
+                    text = App.getContext().getResources().getString(R.string.royalStraightFlush);
+                } else {
+                    text = App.getContext().getResources().getString(R.string.StraightFlush);
+                }
+                break;
+
+            case 7:
+                text = App.getContext().getResources().getString(R.string.FourOfKind);
+                break;
+
+            case 6:
+                text = App.getContext().getResources().getString(R.string.FullHouse);
+                break;
+
+            case 5:
+                text = App.getContext().getResources().getString(R.string.Flush);
+                break;
+
+            case 4:
+                text = App.getContext().getResources().getString(R.string.Straight);
+                break;
+
+            case 3:
+                text = App.getContext().getResources().getString(R.string.ThreeOfKind);
+                break;
+
+            case 2:
+                text = App.getContext().getResources().getString(R.string.TwoPair);
+                break;
+
+            case 1:
+                text = App.getContext().getResources().getString(R.string.Pair);
+                break;
+
+            case 0:
+                text = App.getContext().getResources().getString(R.string.HighCard);
+
+        }
+
+        if(handType != 2 && handType != 6) {
+            if(handType != 5) {
+                text = text.concat(" (" + getCard(card) + ")");
+            }
+        } else {
+            text = text.concat(" (" + getCard(card) + ", " + getCard(card2) +")");
+        }
+
+        return text;
 
     }
 

@@ -74,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
             }
             // jeśli wybrano wszystkie karty to wyświetlamy jaki układ ma user, w przeciwnym wypadku domyślną wartość
             TextView info = (TextView) findViewById(R.id.currentCardsInfo);
-            if (selectedCount == 7) {
+            if (selectedCount >= 5) {
                 Poker poker = new Poker(cards);
-                info.setText(Integer.toString(poker.getHandType()));
+                info.setText(poker.getHandType());
 
             } else {
                 info.setText(getResources().getString(R.string.cardsInfoDefault));

@@ -5,6 +5,21 @@
     <string name="resetBtn">Reset</string>
     <string name="cardsInfoDefault">Wybierz karty</string>
 
+    <string name="royalStraightFlush">Poker królewski</string>
+    <string name="StraightFlush">Poker</string>
+    <string name="FourOfKind">Kareta</string>
+    <string name="FullHouse">Ful</string>
+    <string name="Flush">Kolor</string>
+    <string name="Straight">Strit</string>
+    <string name="ThreeOfKind">Trójka</string>
+    <string name="TwoPair">Dwie pary</string>
+    <string name="Pair">Para</string>
+    <string name="HighCard">Wysoka karta</string>
+
+    <string name="ace">As</string>
+    <string name="king">Król</string>
+    <string name="queen">Królowa</string>
+    <string name="jack">Walet</string>
 
     <string name="aceOfHearts">As Kier</string>
     <string name="kingOfHearts">Król Kier</string>
