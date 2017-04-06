@@ -3,6 +3,7 @@
     <string name="tableCardLabel">Karty na stole</string>
     <string name="handCardLabel">Karty w ręce</string>
     <string name="resetBtn">Reset</string>
+    <string name="cardsInfoDefault">Wybierz karty</string>
 
 
     <string name="aceOfHearts">As Kier</string>

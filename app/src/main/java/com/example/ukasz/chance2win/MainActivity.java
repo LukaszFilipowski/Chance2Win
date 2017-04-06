@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -55,14 +56,30 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
         int selectedCount = settings.getInt("selectedCount", 0);
-        for(int i = 1; i <= selectedCount; i++ ) {
-            int currentBtn = settings.getInt("Btn"+i, 0);
-            if(currentBtn != 0) {
-                int currentKey = settings.getInt("Res"+i, 0);
-                if(currentKey != 0) {
-                    ImageButton btn = (ImageButton) findViewById(currentBtn);
-                    Picasso.with(this).load(currentKey).resize(115, 140).into(btn);
+
+
+        if(selectedCount > 0) {
+            int cards[] = new int[selectedCount];
+
+            for (int i = 1; i <= selectedCount; i++) {
+                int currentBtn = settings.getInt("Btn" + i, 0);
+                if (currentBtn != 0) {
+                    int currentKey = settings.getInt("Res" + i, 0);
+                    cards[i-1] = currentKey;
+                    if (currentKey != 0) {
+                        ImageButton btn = (ImageButton) findViewById(currentBtn);
+                        Picasso.with(this).load(currentKey).resize(115, 140).into(btn);
+                    }
                 }
+            }
+            // jeśli wybrano wszystkie karty to wyświetlamy jaki układ ma user, w przeciwnym wypadku domyślną wartość
+            TextView info = (TextView) findViewById(R.id.currentCardsInfo);
+            if (selectedCount == 7) {
+                Poker poker = new Poker(cards);
+                info.setText(Integer.toString(poker.getHandType()));
+
+            } else {
+                info.setText(getResources().getString(R.string.cardsInfoDefault));
             }
         }
     }

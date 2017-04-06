@@ -243,7 +243,16 @@ public class Deck {
         }
 
         public enum Rank {
-            ACE, KING, QUEEN, JACK, C10, C9, C8, C7, C6, C5, C4, C3, C2
+            ACE(13), KING(12), QUEEN(11), JACK(10), C10(9), C9(8), C8(7), C7(6), C6(5), C5(4), C4(3), C3(2), C2(1);
+            private final int value;
+
+            Rank(int value) {
+                this.value = value;
+            }
+
+            public int getValue() {
+                return value;
+            }
         }
 
 
