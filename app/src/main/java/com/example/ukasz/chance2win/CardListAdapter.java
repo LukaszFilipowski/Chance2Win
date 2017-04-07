@@ -21,7 +21,7 @@ public class CardListAdapter extends ArrayAdapter<String> {
     private final Integer[] cardImagesId;
 
     public CardListAdapter(Activity context, String[] cardNames, Integer[] cardImagesId) {
-        super(context, R.layout.item, cardNames);
+        super(context, R.layout.item_card_list, cardNames);
         this.context = context;
         this.cardNames = cardNames;
         this.cardImagesId = cardImagesId;
@@ -30,7 +30,7 @@ public class CardListAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.item, null, true);
+        View rowView = inflater.inflate(R.layout.item_card_list, null, true);
         TextView cardName = (TextView) rowView.findViewById(R.id.itemName);
         cardName.setText(cardNames[position]);
 
