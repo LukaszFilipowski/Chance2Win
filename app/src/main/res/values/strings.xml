@@ -4,6 +4,8 @@
     <string name="handCardLabel">Karty w ręce</string>
     <string name="resetBtn">Reset</string>
     <string name="cardsInfoDefault">Wybierz karty</string>
+    <string name="resultBtn">Analizuj</string>
+    <string name="playersCountLabel">Liczba przeciwników</string>
 
     <string name="royalStraightFlush">Poker królewski</string>
     <string name="StraightFlush">Poker</string>

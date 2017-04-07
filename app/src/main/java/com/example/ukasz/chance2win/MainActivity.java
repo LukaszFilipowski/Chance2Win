@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -21,9 +22,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(App.currentClicked != null) {
+        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
 
-            SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
+        //seekBar onChangeListener
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                TextView playersCount = (TextView) findViewById(R.id.playersCount);
+                playersCount.setText(getResources().getString(R.string.playersCountLabel) + ": " + Integer.toString((progress+1)));
+
+                SharedPreferences.Editor editor = getSharedPreferences(App.PREFS_NAME, 0).edit();
+                editor.putInt("playersCount", progress+1);
+                editor.commit();
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
+
+        TextView playersCount = (TextView) findViewById(R.id.playersCount);
+
+        int progress = settings.getInt("playersCount", 1);
+        playersCount.setText(getResources().getString(R.string.playersCountLabel) + ": " + Integer.toString(progress));
+        seekBar.setProgress(progress-1);
+
+        if(App.currentClicked != null) {
             int selectedCount = settings.getInt("selectedCount", 0);
             boolean findedIndex = false;
             for(int i = 1; i <= selectedCount; i++) {
@@ -54,9 +86,7 @@ public class MainActivity extends AppCompatActivity {
             App.currentClicked = null;
         }
 
-        SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
         int selectedCount = settings.getInt("selectedCount", 0);
-
 
         if(selectedCount > 0) {
             int cards[] = new int[selectedCount];

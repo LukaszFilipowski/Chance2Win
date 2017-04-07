@@ -121,4 +121,36 @@
         android:layout_alignTop="@+id/button"
         android:layout_toLeftOf="@+id/cardOnHand1"
         android:layout_toStartOf="@+id/cardOnHand1" />
+
+    <Button
+        android:id="@+id/resultButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button"
+        android:layout_toEndOf="@+id/cardOnHand1"
+        android:layout_toRightOf="@+id/cardOnHand1"
+        android:text="@string/resultBtn" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignLeft="@+id/playersCount"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignStart="@+id/playersCount"
+        android:layout_below="@+id/playersCount"
+        android:layout_marginTop="11dp"
+        android:max="21"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/playersCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playersCountLabel"
+        android:layout_below="@+id/resultButton"
+        android:layout_alignLeft="@+id/currentCardsInfo"
+        android:layout_alignStart="@+id/currentCardsInfo" />
+
 </RelativeLayout>
