@@ -142,8 +142,8 @@
         android:layout_alignStart="@+id/playersCount"
         android:layout_below="@+id/playersCount"
         android:layout_marginTop="11dp"
-        android:max="21"
-        android:progress="0" />
+        android:max="9"
+        android:progress="1" />
 
     <TextView
         android:id="@+id/playersCount"

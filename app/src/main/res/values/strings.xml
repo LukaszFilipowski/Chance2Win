@@ -10,6 +10,7 @@
     <string name="drawInfoLabel">Szansa na remis: </string>
     <string name="winInfoLabel">Szansa na wygraną: </string>
     <string name="infoLabel">Lista możliwych ruchów przeciwników: </string>
+    <string name="veryLittleChance">bardzo mała szansa</string>
 
     <string name="royalStraightFlush">Poker królewski</string>
     <string name="StraightFlush">Poker</string>
