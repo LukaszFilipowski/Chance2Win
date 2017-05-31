@@ -35,7 +35,7 @@ public class CardListAdapter extends ArrayAdapter<String> {
         cardName.setText(cardNames[position]);
 
         ImageView cardImage = (ImageView) rowView.findViewById(R.id.itemImage);
-        Picasso.with(context).load(cardImagesId[position]).resize(100, 120).into(cardImage);
+        Picasso.with(context).load(cardImagesId[position]).resize(App.targetWidth, App.targetHeight).into(cardImage);
 
         return rowView;
     }

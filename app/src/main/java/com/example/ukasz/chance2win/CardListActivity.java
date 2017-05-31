@@ -20,17 +20,8 @@ public class CardListActivity extends AppCompatActivity {
 
     ListView cardsList;
     boolean clicked = false;
-    String[] cardNames = getStringFromResource(App.deck.getCardNamesId());
+    String[] cardNames = App.getStringFromResource(App.deck.getCardNamesId());
     Integer[] cardImagesId = App.deck.getCardImagesId();
-
-    private String[] getStringFromResource(Integer[] stringIds) {
-        String[] cardNames = new String[stringIds.length];
-        for(int i=0; i<stringIds.length; i++) {
-            cardNames[i] = App.getContext().getResources().getString(stringIds[i]);
-        }
-
-        return cardNames;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +41,6 @@ public class CardListActivity extends AppCompatActivity {
                 App.deck.deleteFromDeck(cardImagesId[position]);
                 Intent intent = new Intent(App.getContext(), MainActivity.class);
                 startActivity(intent);
-                //Toast.makeText(CardListActivity.this, "Klikłeś na " +cardNames[position], Toast.LENGTH_SHORT).show();
             }
         });
 

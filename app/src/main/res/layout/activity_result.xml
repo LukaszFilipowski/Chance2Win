@@ -14,12 +14,20 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
+    <TextView
+        android:id="@+id/textLabel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/statsRow"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <ListView
         android:id="@+id/resultList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/textLabel"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/statsRow" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

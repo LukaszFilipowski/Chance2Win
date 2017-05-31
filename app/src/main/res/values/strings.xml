@@ -6,6 +6,7 @@
     <string name="cardsInfoDefault">Wybierz karty</string>
     <string name="resultBtn">Analizuj</string>
     <string name="playersCountLabel">Liczba przeciwników</string>
+    <string name="selectAllCardsWarning">Najpierw wybierz wszystkie karty</string>
 
     <string name="royalStraightFlush">Poker królewski</string>
     <string name="StraightFlush">Poker</string>

@@ -129,6 +129,7 @@
         android:layout_alignTop="@+id/button"
         android:layout_toEndOf="@+id/cardOnHand1"
         android:layout_toRightOf="@+id/cardOnHand1"
+        android:onClick="result"
         android:text="@string/resultBtn" />
 
     <SeekBar

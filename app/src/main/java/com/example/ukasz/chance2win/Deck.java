@@ -79,6 +79,23 @@ public class Deck {
         }
     }
 
+    Deck(int resourcesId[]) {
+        deckList = new ArrayList<Cards>();
+        for(int i = 0; i < cards.length; i++) {
+            boolean withoutThisCard = false;
+            for(int l = 0; l < resourcesId.length; l++) {
+                if(cards[i] == getCardByDrawable(resourcesId[l])) {
+                    withoutThisCard = true;
+                    break;
+                }
+            }
+            if(!withoutThisCard) {
+                deckList.add(cards[i]);
+            }
+
+        }
+    }
+
     public void deleteFromDeck(int resourceId) {
         for(int i = 0; i < deckList.size(); i++) {
             Cards currentItem = deckList.get(i);

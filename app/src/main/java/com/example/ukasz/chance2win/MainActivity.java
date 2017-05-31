@@ -12,11 +12,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
-
+    private int[] handCards;
+    private int[] tableCards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
 
+        SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
         TextView playersCount = (TextView) findViewById(R.id.playersCount);
 
         int progress = settings.getInt("playersCount", 1);
@@ -90,11 +92,27 @@ public class MainActivity extends AppCompatActivity {
 
         if(selectedCount > 0) {
             int cards[] = new int[selectedCount];
+            handCards = new int[2];
+            tableCards = new int[5];
+
+            int handCardIndex = 0;
+            int tableCardIndex = 0;
 
             for (int i = 1; i <= selectedCount; i++) {
                 int currentBtn = settings.getInt("Btn" + i, 0);
                 if (currentBtn != 0) {
                     int currentKey = settings.getInt("Res" + i, 0);
+
+                    // cards to send to resultActivity
+                    if(currentBtn != R.id.cardOnHand1 && currentBtn != R.id.cardOnHand2) {
+                        tableCards[tableCardIndex] = currentKey;
+                        tableCardIndex++;
+                    } else {
+                        handCards[handCardIndex] = currentKey;
+                        handCardIndex++;
+                    }
+
+
                     cards[i-1] = currentKey;
                     if (currentKey != 0) {
                         ImageButton btn = (ImageButton) findViewById(currentBtn);
@@ -131,5 +149,23 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void result(View view) {
+        SharedPreferences settings = getSharedPreferences(App.PREFS_NAME, 0);
+        int selectedCount = settings.getInt("selectedCount", 0);
+
+        if(selectedCount == 7) {
+
+            Intent intent = new Intent(this, ResultListActivity.class);
+
+            intent.putExtra("handCards", handCards);
+            intent.putExtra("tableCards", tableCards);
+            startActivity(intent);
+
+        } else {
+            Toast.makeText(MainActivity.this, getResources().getString(R.string.selectAllCardsWarning), Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

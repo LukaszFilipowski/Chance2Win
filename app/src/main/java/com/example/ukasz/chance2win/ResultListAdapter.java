@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by Łukasz on 07.04.2017.
  */
@@ -17,13 +20,13 @@ import com.squareup.picasso.Picasso;
 public class ResultListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final String[] handName;
-    private final Integer[][] handCards;
+    private final List<String> handName;
+    private final LinkedList<Integer[]> handCards;
 
-    public ResultListAdapter(Activity context, String[] handName, Integer[][] handCards) {
-        super(context, R.layout.item_hand_list);
+    public ResultListAdapter(Activity context, List<String> handTypeList, LinkedList<Integer[]> handCards) {
+        super(context, R.layout.item_hand_list, handTypeList);
         this.context = context;
-        this.handName = handName;
+        this.handName = handTypeList;
         this.handCards = handCards;
     }
 
@@ -32,22 +35,15 @@ public class ResultListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.item_hand_list, null, true);
         TextView cardName = (TextView) rowView.findViewById(R.id.handName);
-        cardName.setText(handName[position]);
+        cardName.setText(handName.get(position));
+
+        Integer[] currentCards = handCards.get(position);
 
         ImageView card = (ImageView) rowView.findViewById(R.id.Card1);
-        Picasso.with(context).load(handCards[position][0]).resize(100, 120).into(card);
+        Picasso.with(context).load(currentCards[0]).resize(App.targetWidth, App.targetHeight).into(card);
 
         card = (ImageView) rowView.findViewById(R.id.Card2);
-        Picasso.with(context).load(handCards[position][1]).resize(100, 120).into(card);
-
-        card = (ImageView) rowView.findViewById(R.id.Card3);
-        Picasso.with(context).load(handCards[position][2]).resize(100, 120).into(card);
-
-        card = (ImageView) rowView.findViewById(R.id.Card4);
-        Picasso.with(context).load(handCards[position][3]).resize(100, 120).into(card);
-
-        card = (ImageView) rowView.findViewById(R.id.Card5);
-        Picasso.with(context).load(handCards[position][4]).resize(100, 120).into(card);
+        Picasso.with(context).load(currentCards[1]).resize(App.targetWidth, App.targetHeight).into(card);
 
         return rowView;
     }

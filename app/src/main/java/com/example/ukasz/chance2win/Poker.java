@@ -1,7 +1,5 @@
 package com.example.ukasz.chance2win;
 
-import android.util.Log;
-
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -11,9 +9,9 @@ import java.util.Comparator;
 
 public class Poker {
 
-    private static Deck.Cards[] cards;
-    private static int handType;
-    private static Deck.Cards.Rank card = null, card2 = null;
+    private Deck.Cards[] cards;
+    private int handType;
+    private Deck.Cards.Rank card = null, card2 = null;
 
 
     Poker(int[] cards) {
@@ -50,7 +48,7 @@ public class Poker {
                         firstElement = cards[i].getRank();
                     }
                     currentSeries++;
-                    Log.d("DD", cards[i].getRank() + " " + cards[i+1].getRank());
+
                 } else {
                     if (maxSeries < currentSeries) {
                         maxSeries = currentSeries;
@@ -156,6 +154,7 @@ public class Poker {
 
             // straight
             Deck.Cards.Rank status = findStraight();
+            card = status;
             if(status != null) {
                 return 4;
 
@@ -227,6 +226,49 @@ public class Poker {
                  int card = rank.getValue()+1;
                  return Integer.toString(card);
         }
+    }
+
+    // compare current poker with other
+    // returns 1 when current poker is higher than given in funct
+    // return 2 - poker hands are equal
+    public Integer compare(Poker poker) {
+        if(handType > poker.handType) {
+            return 1;
+        } else {
+            if(handType == poker.handType) {
+                if(card != null && poker.card != null) {
+                    if (card.getValue() == poker.card.getValue()) {
+                        if(card2 != null && poker.card2 != null) {
+                            if (card2.getValue() == poker.card2.getValue()) {
+                                return 2;
+                            } else {
+                                if (card2.getValue() > poker.card2.getValue()) {
+                                    return 1;
+                                } else {
+                                    return 0;
+                                }
+                            }
+                        } else {
+                            return 2;
+                        }
+                    } else {
+                        if (card.getValue() > poker.card.getValue()) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    }
+                } else {
+                    return 2;
+                }
+            } else {
+                if(handType < poker.handType) {
+                    return 0;
+                }
+            }
+        }
+
+        return null;
     }
 
     public String getHandType() {
