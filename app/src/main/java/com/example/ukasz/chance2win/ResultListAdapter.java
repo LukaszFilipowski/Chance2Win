@@ -42,7 +42,7 @@ public class ResultListAdapter extends ArrayAdapter<String> {
         ImageView card = (ImageView) rowView.findViewById(R.id.Card1);
         Picasso.with(context).load(currentCards[0]).resize(App.targetWidth, App.targetHeight).into(card);
 
-        card = (ImageView) rowView.findViewById(R.id.Card2);
+        card = (ImageView) rowView.findViewById(R.id.tableCard2);
         Picasso.with(context).load(currentCards[1]).resize(App.targetWidth, App.targetHeight).into(card);
 
         return rowView;

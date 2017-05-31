@@ -6,28 +6,150 @@
     android:layout_height="match_parent"
     tools:context="com.example.ukasz.chance2win.ResultListActivity">
 
-    <TextView
-        android:id="@+id/statsRow"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/tableCard3"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/tableCardsLabel"
+        android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textLabel"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/handCard"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_below="@+id/statsRow"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/handCardsLabel"
+        android:layout_toLeftOf="@+id/tableCard3"
+        android:layout_toStartOf="@+id/tableCard3" />
+
+    <ImageView
+        android:id="@+id/handCard2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/handCard"
+        android:layout_toEndOf="@+id/tableCard3"
+        android:layout_toRightOf="@+id/tableCard3"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/tableCard5"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_alignTop="@+id/tableCard3"
+        android:layout_toRightOf="@+id/tableCard4"
+        android:layout_toEndOf="@+id/tableCard4" />
+
+    <ImageView
+        android:id="@+id/tableCard4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/tableCard5"
+        android:layout_toRightOf="@+id/tableCardsLabel"
+        android:layout_toEndOf="@+id/tableCardsLabel" />
+
+    <ImageView
+        android:id="@+id/tableCard"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_alignTop="@+id/tableCard2"
+        android:layout_toLeftOf="@+id/tableCard2"
+        android:layout_toStartOf="@+id/tableCard2" />
+
+    <ImageView
+        android:id="@+id/tableCard2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/tableCard3"
+        android:layout_toLeftOf="@+id/tableCardsLabel"
+        android:layout_toStartOf="@+id/tableCardsLabel" />
 
     <ListView
         android:id="@+id/resultList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textLabel"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/infoLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tableCardsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tableCardLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/handCardsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/handCardLabel"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tableCard2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/winHandChanceLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/winInfoLabel"
+        android:layout_below="@+id/handCard"
+        android:layout_marginTop="14dp"
+        android:layout_alignLeft="@+id/tableCard"
+        android:layout_alignStart="@+id/tableCard"
+        android:layout_alignRight="@+id/tableCard5"
+        android:layout_alignEnd="@+id/tableCard5" />
+
+    <TextView
+        android:id="@+id/infoLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/drawHandChanceLabel"
+        android:layout_alignLeft="@+id/drawHandChanceLabel"
+        android:layout_alignRight="@+id/drawHandChanceLabel"
+        android:layout_alignStart="@+id/drawHandChanceLabel"
+        android:layout_below="@+id/drawHandChanceLabel"
+        android:layout_marginTop="19dp"
+        android:text="@string/infoLabel" />
+
+    <TextView
+        android:id="@+id/drawHandChanceLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/winHandChanceLabel"
+        android:layout_alignLeft="@+id/winHandChanceLabel"
+        android:layout_alignRight="@+id/winHandChanceLabel"
+        android:layout_alignStart="@+id/winHandChanceLabel"
+        android:layout_centerVertical="true"
+        android:text="@string/drawInfoLabel" />
 
 </RelativeLayout>

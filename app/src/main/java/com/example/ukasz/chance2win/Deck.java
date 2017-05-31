@@ -1,7 +1,5 @@
 package com.example.ukasz.chance2win;
 
-import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.List;
 

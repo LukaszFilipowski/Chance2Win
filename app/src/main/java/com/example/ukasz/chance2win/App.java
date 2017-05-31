@@ -3,8 +3,6 @@ package com.example.ukasz.chance2win;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
-import android.widget.ImageButton;
 
 /**
  * Created by Łukasz on 20.03.2017.

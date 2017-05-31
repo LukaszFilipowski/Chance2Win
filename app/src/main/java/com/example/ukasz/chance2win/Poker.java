@@ -1,8 +1,5 @@
 package com.example.ukasz.chance2win;
 
-import java.util.Collections;
-import java.util.Comparator;
-
 /**
  * Created by Łukasz on 04.04.2017.
  */
@@ -97,8 +94,26 @@ public class Poker {
 
             Deck.Cards.Rank status = findStraight();
             card = status;
-            if(findStraight() != null) {
-                return 8;
+            if(status != null) {
+                Deck.Cards.Color color = null;
+                Boolean thereIs = true;
+                for(int i=0; i < 5; i++) {
+                    for(int l=0; l < cards.length; l++) {
+                        if(cards[l].getRank().getValue() == (status.getValue() - i)) {
+                            if(i == 0) {
+                                color = cards[l].getColor();
+                            } else {
+                                if(cards[l].getColor() != color) {
+                                    thereIs = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                if(thereIs) {
+                    return 8;
+                }
             } else {
                 flush = true;
             }
